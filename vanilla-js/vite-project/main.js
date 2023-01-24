@@ -120,7 +120,7 @@
 
 // Métodos de array
 // map
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // for (const i of array) {
 //     document.body.innerText += i;    
@@ -148,7 +148,32 @@ const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // const novoArray = array.filter(item => item % 2 === 0);
 // const novoArray = array.filter(item => item % 2 !== 0);
 
-document.body.innerText = JSON.stringify(novoArray);
+// every
+
+// const todosItensSaoNumeros = array.every(item => typeof item === 'number');
+
+// console.log("🚀 ~ file: main.js:154 ~ todosItensSaoNumeros", todosItensSaoNumeros);
+
+// some
+// const peloMenosUmIntemNaoEUmNumero = array.some(item => typeof item !== 'number');
+// console.log("🚀 ~ file: main.js:158 ~ peloMenosUmIntemNaoEUmNumero", peloMenosUmIntemNaoEUmNumero)
+
+// // reduce
+
+// const soma = array.reduce((acc, item) => {
+//     console.log(acc + ',' + item);
+//     return acc + item;
+// }, 0);
+
+
+// Template Literals
+
+// // const name = 'João';
+// const name = null;
+// // const message = 'Bem-vindo, ' + name
+// const message = `Bem-vindo, ${name ?? 'vistante'}`
+
+// console.log("🚀 ~ file: main.js:173 ~ message", message)
 
 
 
