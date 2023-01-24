@@ -118,7 +118,37 @@
 // document.body.innerText = user?.[key]
 
 
+// Métodos de array
+// map
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+// for (const i of array) {
+//     document.body.innerText += i;    
+// }
+
+// array.forEach(i => {
+//     document.body.innerText += i;
+// });
+
+// const novoArray = array.map(item => {
+//    return item * 2;
+// });
+
+// const novoArray = array.map(item => {
+//     if (item % 2 === 0) {
+//         return item * 2;
+//     }
+//     return item;
+// });
+
+// document.body.innerText = JSON.stringify(novoArray);
+
+// filter
+
+// const novoArray = array.filter(item => item % 2 === 0);
+// const novoArray = array.filter(item => item % 2 !== 0);
+
+document.body.innerText = JSON.stringify(novoArray);
 
 
 
