@@ -176,5 +176,103 @@
 // console.log("🚀 ~ file: main.js:173 ~ message", message)
 
 
+// Promise
 
+// const somaDoisNumeros = (a, b) => new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(a + b);
+//     }, 2000);
+// });
+
+// const somaDoisNumeros = (a, b) => new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         // resolve(a + b);
+//         reject('ERRO');
+//     }, 2000);
+// })
+
+
+// somaDoisNumeros(1, 2).then(
+//     soma => {
+//         console.log(soma);
+//     }
+// ).catch(err => {
+//     console.log(err);
+// });
+
+
+// fetch('https://api.github.com/users/gustavoclay')
+//     .then(response => {
+//         console.log(response);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+
+
+// fetch('https://api.github.com/users/gustavoclay')
+//     .then(response => {
+//         response.text().then(body => {
+//             console.log(body);
+//         })
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+
+// fetch('https://api.github.com/users/gustavoclay')
+//     .then(response => {
+//         response.json().then(body => {
+//             console.log(body);
+//         })
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+
+// fetch('https://api.github.com/users/gustavoclay')
+//     .then(response => {
+//         return response.json();
+//     })
+//     .then(body => {
+//         console.log(body);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     })
+//     .finally(() => {
+//         console.log('Finalizou');
+//     });
+
+
+// async function buscaDadosNoGithub() {
+//     try {
+//         const response = await fetch('https://api.github.com/users/gustavoclay');
+//         const body = await response.json();
+
+//         console.log(body);
+
+//     } catch (error) {
+//         console.log(error);
+//     } finally {
+//         console.log('Finalizou');
+//     }
+// }
+
+// buscaDadosNoGithub();
+
+// async function buscaDadosNoGithub() {
+//     try {
+//         const response = await fetch('https://api.github.com/users/gustavoclay');
+//         const body = await response.json();
+
+//         return body;
+//     } catch (error) {
+//         console.log(error);
+//     } finally {
+//         console.log('Finalizou');
+//     }
+// }
+
+// buscaDadosNoGithub().then(body => { console.log(body.name) });
 
