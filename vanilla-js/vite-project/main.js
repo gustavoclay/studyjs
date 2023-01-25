@@ -276,3 +276,31 @@
 
 // buscaDadosNoGithub().then(body => { console.log(body.name) });
 
+// imports
+
+// // named export
+// import { soma, sub, PI } from "./lib/math";
+
+// import sum from "./lib/sum";
+// // import soma2 from "./lib/sum";
+
+
+// console.log(soma(1,2));
+// console.log(sub(4,2));
+// console.log(PI);
+
+// console.log(sum(1,2));
+
+// import * as math from "./lib/math";
+
+// console.log(math.soma(1, 2));
+// console.log(math.sub(4, 2));
+// console.log(math.PI);
+
+// import { soma as sum } from "./lib/math";
+
+// console.log(sum(1, 2));
+//importando e exportando de outro arquivo
+// import { soma } from "./lib/sum";
+
+// console.log(soma(1, 2));
