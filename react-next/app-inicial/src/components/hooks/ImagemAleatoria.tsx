@@ -1,13 +1,16 @@
 import Image from "next/image"
+import { useState } from "react"
 
 export default function ImagemAleatoria() {
 
-    let pesquisa: string = ''
-    const url = 'https://source.unsplash.com/featured/300x300'
+    const [pesquisa, setPesquisa] = useState<string>('abstract')
+    const [tamanho, setTamanho] = useState<number>(300)
+    // let pesquisa: string = ''
+    const url = 'https://source.unsplash.com/featured'
 
-    function getUrlImagem() {
-        return `${url}?${pesquisa}`
-    }
+    // function getUrlImagem() {
+    //     return `${url}?${pesquisa}`
+    // }
 
     function renderButton(valor: string) {
         return (
@@ -15,8 +18,8 @@ export default function ImagemAleatoria() {
                 bg-blue-500 px-4 py-2 rounded-md
             `}
                 onClick={() => {
-                    pesquisa = valor
-                    console.log("🚀 ~ file: ImagemAleatoria.tsx:14 ~ renderButton ~ pesquisa:", getUrlImagem())
+                    setPesquisa(valor)
+                    console.log("🚀 ~ file: ImagemAleatoria.tsx:14 ~ renderButton ~ pesquisa:", valor)
 
                 }}
             >
@@ -28,12 +31,29 @@ export default function ImagemAleatoria() {
 
     return (
         <div className="flex flex-col gap-3 border border-zinc-500 p-7 rounded-md">
-            <Image src={getUrlImagem()} height={300} width={300} alt="Imagem aleatoria" />
+            <div className="flex justify-center gap-7 mb-5">
+                <span>{pesquisa}</span>
+                <span>{tamanho}x{tamanho}</span>
+            </div>
+            <Image
+                className="rounded-md"
+                src={`${url}/${tamanho}x${tamanho}?${pesquisa}`}
+                height={300} width={300} alt="Imagem aleatoria"
+            />
             <div className="flex justify-between gap-5">
                 {renderButton('abstract')}
                 {renderButton('city')}
                 {renderButton('person')}
-                I</div>
+            </div>
+            <div>
+                <input
+                    className="p-2 rounded-md outline-none w-full"
+                    type="number"
+                    value={tamanho}
+                    onChange={e => {
+                        setTamanho(+e.target.value)
+                    }} />
+            </div>
         </div>
     )
 }
