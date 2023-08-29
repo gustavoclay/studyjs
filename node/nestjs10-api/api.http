@@ -1,0 +1,25 @@
+
+###
+GET http://localhost:3000 HTTP/1.1
+
+###
+POST http://localhost:3000 HTTP/1.1
+
+###
+GET http://localhost:3000/app/get HTTP/1.1
+
+###
+POST http://localhost:3000/app/post HTTP/1.1
+
+
+###
+POST http://localhost:3000/ HTTP/1.1
+
+###
+POST http://localhost:3000/app/post HTTP/1.1
+
+###
+POST http://localhost:3000/app/post HTTP/1.1
+
+###
+POST http://localhost:3000/app/post HTTP/1.1
