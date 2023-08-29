@@ -1,25 +1,34 @@
 
 ###
-GET http://localhost:3000 HTTP/1.1
+GET http://localhost:3000
 
 ###
-POST http://localhost:3000 HTTP/1.1
+POST http://localhost:3000
 
 ###
-GET http://localhost:3000/app/get HTTP/1.1
+GET http://localhost:3000/app/get
 
 ###
-POST http://localhost:3000/app/post HTTP/1.1
+POST http://localhost:3000/app/post
 
-
-###
-POST http://localhost:3000/ HTTP/1.1
+#######################
 
 ###
-POST http://localhost:3000/app/post HTTP/1.1
+POST http://localhost:3000
 
 ###
-POST http://localhost:3000/app/post HTTP/1.1
+GET http://localhost:3000/categories
 
 ###
-POST http://localhost:3000/app/post HTTP/1.1
+GET http://localhost:3000/categories/111
+###
+POST http://localhost:3000/categories 
+Content-Type: application/json
+
+{
+    "name": "Category 1",
+    "description": "Category 1 description"
+}
+
+###
+DELETE  http://localhost:3000/categories/1
