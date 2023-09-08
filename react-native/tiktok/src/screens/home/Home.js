@@ -1,7 +1,45 @@
-import React from 'react'
-import { Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useRef, useState } from 'react'
+import { FlatList, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import FeedItem from '../../../components/FeedItem/FeedItem'
 
 export default function Home() {
+
+  let feedItems = [
+    {
+      id: '1',
+      video: 'https://i.imgur.com/MmDMYQQ.mp4',
+      name: '@animals',
+      description: 'Meow meow'
+    },
+    {
+      id: '2',
+      video: 'https://i.imgur.com/Z6gaZ2A.mp4',
+      name: '@animals',
+      description: 'his horse must be winning!'
+    },
+    {
+      id: '3',
+      video: 'https://i.imgur.com/ohv4IxA.mp4',
+      name: '@cats',
+      description: 'Hey, Look at me!'
+    },
+    {
+      id: '4',
+      video: 'https://i.imgur.com/jbwiIel.mp4',
+      name: '@dogs',
+      description: 'A photo of my dog Panko every day'
+    },
+  ]
+
+
+  const [showItem, setShowItem] = useState(feedItems[0])
+  const onViewRef = useRef(({ viewableItems }) => {
+    if (viewableItems && viewableItems.length > 0) {
+      setShowItem(feedItems[viewableItems[0].index])
+    }
+  })
+
+
   return (
     <View style={styles.container}>
 
@@ -15,9 +53,12 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
+      <FlatList
+        data={feedItems}
+        renderItem={({ item }) => <FeedItem data={item} currentShowItem={showItem} />}
+        onViewableItemsChanged={onViewRef.current}
+      />
 
-
-      <Text>Home</Text>
     </View>
   )
 }
