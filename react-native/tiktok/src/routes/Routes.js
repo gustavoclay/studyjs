@@ -55,9 +55,9 @@ export default function Routes() {
         options={{
           tabBarIcon: ({ focused, color, size }) => {
             if (focused) {
-              return <Ionicons name="add" size={size} color={color} />
+              return <Ionicons name="add-circle" size={size} color={color} />
             }
-            return <Ionicons name="add-outline" size={size} color={color} />
+            return <Ionicons name="add-circle-outline" size={size} color={color} />
           }
         }}
       />
