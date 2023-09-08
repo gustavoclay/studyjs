@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { FlatList, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, FlatList, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import FeedItem from '../../../components/FeedItem/FeedItem'
 
 export default function Home() {
@@ -57,6 +57,15 @@ export default function Home() {
         data={feedItems}
         renderItem={({ item }) => <FeedItem data={item} currentShowItem={showItem} />}
         onViewableItemsChanged={onViewRef.current}
+        snapToAlignment='center'
+        snapToInterval={Dimensions.get('screen').height}
+        scrollEventThrottle={200}
+        decelerationRate='fast'
+        viewabilityConfig={{
+          waitForInteraction: false,
+          viewAreaCoveragePercentThreshold: 100
+        }}
+        showsVerticalScrollIndicator={false}
       />
 
     </View>
