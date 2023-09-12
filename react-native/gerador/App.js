@@ -1,8 +1,25 @@
 import Slider from '@react-native-community/slider'
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
+let charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-*/|%()[]{}^!@#$?&"
+
 export default function App() {
+  const [size, setSize] = useState(10)
+
+  function generatePassword() {
+    let password = ''
+
+    for (let i = 0, n = charset.length; i < size; i++) {
+      password += charset.charAt(Math.floor(Math.random() * n))
+    }
+
+    alert('password: ' + password)
+
+  }
+
+
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Gerador de Senhas</Text>
@@ -12,7 +29,7 @@ export default function App() {
         style={styles.logo}
       />
 
-      <Text style={styles.text}>20 caracteres</Text>
+      <Text style={styles.text}>{size} caracteres</Text>
 
       <View style={styles.sliderArea}>
         <Slider
@@ -22,10 +39,12 @@ export default function App() {
           maximumTrackTintColor='#4F709C'
           minimumTrackTintColor='#213555'
           thumbTintColor='#4F709C'
+          value={size}
+          onValueChange={(value) => setSize(value.toFixed(0))}
         />
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={generatePassword}>
         <Text style={[styles.text, styles.buttonText]}>Gerar Senha</Text>
       </TouchableOpacity>
 
