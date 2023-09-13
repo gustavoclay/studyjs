@@ -12,8 +12,9 @@ export default function Passwords() {
 
   useEffect(() => {
     async function loadPasswords() {
-      const passwords = await getItem('passwords');
+      const passwords = await getItem('passwords')
       setListPasswords(passwords)
+      console.log(listPasswords)
     }
 
     loadPasswords();
@@ -29,10 +30,9 @@ export default function Passwords() {
       </View>
       <View style={styles.content}>
         <FlatList
-          style={{ flex: 1, paddingTop: 8 }}
           data={listPasswords}
-          key={item => item}
-          renderItem={({ item }) => <Text style={styles.passwordsText}>{item}</Text>}
+          keyExtractor={(item) => String(item)}
+          renderItem={({ item }) => <Text>{item}</Text>}
         />
       </View>
     </SafeAreaView>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     color: '#F2F7A1'
   },
   content: {
-    flex: 1,
+    // flex: 1,
     paddingLeft: 14,
     paddingRight: 14
   }
