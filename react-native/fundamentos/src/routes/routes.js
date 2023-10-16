@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
-import DrawerRoutes from './Drawer.Router'
+import DrawerRoutes from './drawer.routes'
 
 export default function Routes() {
   return (

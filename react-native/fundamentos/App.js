@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import { PaperProvider } from 'react-native-paper';
-import Routes from './src/router/Routes';
+import Routes from './src/routes/routes';
 
 export default function App() {
   return (
