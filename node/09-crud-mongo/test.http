@@ -1,0 +1,91 @@
+########################### AUTH
+###
+POST http://localhost:3000/auth/registrar
+Content-Type: application/json
+
+{
+  "nome": "Administrador",
+  "email": "teste@example.com",
+  "senha" : "1234"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "pJ4mQ@example.com",
+  "senha" : "1234"
+}
+
+
+###########################  CARGOS
+###
+GET http://localhost:3000/cargos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NDdiOGE1MDRhNjA1MzdhNzc5YWJhNyIsImlhdCI6MTcxNTk3ODQ0NywiZXhwIjoxNzE1OTc4NDU3fQ.XUTD6KkGEgsAx56PsLlk12haEtC0rZkcEiSHo1fN3mY
+
+###
+GET http://localhost:3000/cargos/163d34ce6791dce1192e0689
+
+
+###
+POST http://localhost:3000/cargos
+Content-Type: application/json
+
+{
+  "nome": "Administrador",
+  "salario": 300
+}
+
+###
+PUT http://localhost:3000/cargos/663d34ce6791dce1192e0689
+Content-Type: application/json
+
+{
+  "nome": "Administrador",
+  "salario": 3000
+}
+
+###
+DELETE http://localhost:3000/cargos/663d34ce6791dce1192e0689
+
+###########################  FUNCIONÁRIOS
+###
+GET http://localhost:3000/funcionarios
+
+###
+GET http://localhost:3000/funcionarios/663e8580c599c773afed2e3d
+
+
+###
+POST http://localhost:3000/funcionarios
+Content-Type: application/json
+
+{
+  "nome": "Administrador",
+  "cpf" : "111.111.111-11",
+  "email": "nH5asJZ@example.com",
+  "telefone": "123456789",
+  "dataNascimento": "2021-02-12",
+  "dataContratacao": "2021-02-12",
+  "genero": "Masculino",
+  "cargo": "163d34ce6791dce1192e0689"
+}
+
+###
+PUT http://localhost:3000/funcionarios/663e8580c599c773afed2e3d
+Content-Type: application/json
+
+{
+  "nome": "AdministradorTESTE",
+  "cpf" : "111.111.111-11",
+  "email": "nH5asJZ@example.com",
+  "telefone": "123456789",
+  "dataNascimento": "01/01/2000",
+  "dataContratacao": "01/01/2000",
+  "genero": "Masculino",
+  "cargo": "163d34ce6791dce1192e0689"
+}
+
+###
+DELETE http://localhost:3000/funcionarios/663e8580c599c773afed2e3d

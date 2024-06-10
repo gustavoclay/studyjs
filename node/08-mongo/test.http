@@ -1,0 +1,25 @@
+###
+GET http://localhost:3000/tarefas HTTP/1.1
+
+
+###
+POST http://localhost:3000/tarefas HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Estudar"
+}
+
+###
+GET http://localhost:3000/tarefas/6633f351010c9e2dc942f654 HTTP/1.1
+
+###
+DELETE http://localhost:3000/tarefas/6633f339010c9e2dc942f652 HTTP/1.1
+
+###
+PUT http://localhost:3000/tarefas/6633f351010c9e2dc942f654 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Atualizado"
+}
