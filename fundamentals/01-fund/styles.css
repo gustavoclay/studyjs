@@ -1,0 +1,137 @@
+/* Comentários */
+
+body {
+  padding-bottom: 500px;
+}
+
+h2 {
+  color: purple;
+}
+
+h3 {
+  color: red;
+}
+
+
+/* ID */
+
+#meu-titulo {
+  color: orange;
+  font-size: 25px;
+  font-style: italic;
+}
+
+/* Classes */
+.texto-azul {
+  color: blue;
+}
+
+.fundo-azul {
+  background-color: blue;
+}
+
+/* 2 elementos, 1 regra */
+#meu-paragrafo,
+.texto-pequeno {
+  font-size: small;
+}
+
+#meu-paragrafo {
+  color: red;
+}
+
+#meu-div {
+  background-image: url("./assets/background.jpg");
+  background-repeat: no-repeat;
+  padding: 20px;
+  font-size: 22px;
+}
+
+#meu-div h3 {
+  color: white;
+}
+
+#div-weight-height {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+
+#div-padding {
+  background-color: magenta;
+  padding: 20px 10px 20px 10px;
+}
+
+#div-margin {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  margin: 20px;
+}
+
+#div-border {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  border: 3px solid black;
+}
+
+#div-border-radius {
+  margin: 2px;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  border: 2px dashed black;
+  border-radius: 10px;
+}
+
+#div-text-align {
+  background-color: gray;
+  font-size: 25px;
+  /* text-align: center; */
+  /* text-align: end; */
+  /* text-align: justify; */
+  text-align: center;
+}
+
+#div-text-decoration {
+  /* text-decoration: line-through; */
+  /* text-decoration: underline; */
+  text-decoration: overline;
+}
+
+#div-text-decoration-none {
+  text-decoration: none;
+}
+
+#div-text-transform {
+  /* text-transform: uppercase; */
+  text-transform: lowercase;
+  text-transform: capitalize;
+}
+
+#div-font-family {
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* font-family: sans-serif; */
+  font-family: cursive;
+}
+
+#div-inline {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  margin: 5px;
+  display: inline-block;
+}
+
+#span-block {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  margin: 5px;
+  display: block;
+}
+
+#div-display-none {
+  display: none;
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML e CSS</title>
+
+  <!-- CSS no head -->
+  <style>
+    /* body {
+      padding-bottom: 500px;
+    }
+
+    h2 {
+      color: purple;
+    } */
+  </style>
+
+  <!-- CSS via link -->
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+
+  <!-- Comentário em HTML -> CTRL+; -->
+  <!-- Titulos -->
+  <h1>Título 1</h1>
+  <h2>Título 2</h2>
+  <h3>Título 3</h3>
+  <h4>Título 4</h4>
+  <h5>Título 5</h5>
+  <h6>Título 6</h6>
+
+  <!-- Parágrafos -->
+  <p>
+    Texto de parágrafo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    asdasd
+
+    asdasd
+  </p>
+
+  <!-- Links -->
+  <a href="https://google.com">Google</a>
+  <a href="https://google.com" target="_blank">Google</a>
+
+  <!-- Quebras -->
+
+  <h2>Titulo</h2>
+  <p> Algum texto</p>
+
+  <br> <!-- Quebra de linha -->
+
+  <h2>Titulo 2</h2>
+  <p> Algum texto 2</p>
+
+  <hr> <!-- Barra Horizontal -->
+
+  <h2>Titulo 3</h2>
+  <p> Algum texto 3</p>
+
+  <!-- Imagens -->
+  <img src="./assets/imagem.png" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" />
+
+  <img src="./assets/imagem.png" alt="Imagem da logo da linguagem do HTML" />
+
+  <hr>
+
+  <!-- FORMULÁRIOS -->
+
+  <form>
+    <label for="nome">Nome</label>
+    <input id="nome" type="text" />
+    <label for="email">Email</label>
+    <input id="email" type="email" />
+    <button type="submit">Enviar</button>
+  </form>
+
+  <hr>
+
+  <!-- CSS -->
+  <!-- css inline -->
+  <p style="color: red; font-size: 22px;">Algum texto de paragrafo qualquer</p>
+
+  <hr>
+
+  <!-- DIV -->
+
+  <div>
+    <h3>Produto X</h3>
+    <p>R$ 50,00</p>
+    <a href="#">Comprar</a>
+  </div>
+
+  <hr>
+
+  <!-- SPAN -->
+
+  <p>Algum texto muito <span style="color: red;">grande</span> asdasd asd asdsa dsa dasd</p>
+
+  <hr>
+  <!-- TABELAS -->
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>CPF:</th>
+        <th>Nome:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>000.000.000-10</td>
+        <td>Maria</td>
+      </tr>
+      <tr>
+        <td>000.000.000-11</td>
+        <td>Joaquim</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- LISTAS -->
+
+  <ul>
+    <li>Maçã</li>
+    <li>Banana</li>
+    <li>Uva</li>
+  </ul>
+
+  <ol>
+    <li>Estudar HTML</li>
+    <li>Estudar CSS</li>
+    <li>Estudar JavaScript</li>
+  </ol>
+
+  <hr>
+
+  <!-- Elementos Block e Inline-->
+
+  <p>Algum texto</p>
+  <p>Algum texto</p>
+
+  <span>Algum texto</span><span>Algum texto</span>
+
+  <hr>
+  <!-- Integração com CSS -->
+  <!-- ID -->
+
+  <h3>Titulo</h3>
+  <h3 id="meu-titulo">Meu titulo</h3>
+
+  <hr>
+  <!-- Classes -->
+
+  <p class="texto-azul">Meu paragrafo</p>
+  <p class="texto-azul">Mais um paragrafo</p>
+  <p class="texto-azul">Outro paragrafo</p>
+  <p>Ultimo paragrafo</p>
+
+  <hr>
+
+  <!-- Background (Fundo) -->
+  <p class="fundo-azul">Algum texto</p>
+
+  <hr>
+  <!-- 2 elementos, 1 regra -->
+
+  <p class="texto-pequeno">Algum texto</p>
+  <p id="meu-paragrafo">Algum texto</p>
+
+  <!-- Background Imagem (Imagem de Fundo) -->
+
+  <div id="meu-div">
+    <h3>Testando imagem de Background</h>
+  </div>
+
+  <hr>
+  <!-- Box Model -->
+  <!-- Altura e Largura -->
+  <div id="div-weight-height">
+    Testando Altura e Largura
+  </div>
+
+  <!-- Padding(Espaçamento) -->
+  <div id="div-padding">
+    Testando Espaçamento
+  </div>
+
+  <!-- Margin(Margem) -->
+  <div id="div-margin">
+    Testando Margem
+  </div>
+
+  <!-- Border(Borda) -->
+  <div id="div-border">
+    Testando Borda
+  </div>
+
+  <!-- Border Radius (Arredondamento) -->
+  <div id="div-border-radius">
+    Testando border radius
+  </div>
+
+  <hr>
+
+  <!-- Alinhamento de texto  -->
+  <div id="div-text-align">
+    Testando alinhamento de texdsadsadasdasdasdasdasdasdto
+  </div>
+
+  <hr>
+
+  <!-- Decorações de Textos -->
+  <p id="div-text-decoration">
+    Testando decorações de textos
+  </p>
+
+  <a id="div-text-decoration-none" href="https://google.com">Google</a>
+
+  <!-- Transformação de Textos -->
+  <p id="div-text-transform">
+    Testando transformação de textos
+  </p>
+
+  <!-- Font Family -->
+  <p id="div-font-family">
+    Testando font-family
+  </p>
+  <hr>
+
+  <!-- Display -->
+  <!-- Se o elemento é block ou não -->
+  <div id="div-inline"></div>
+  <div id="div-inline"></div>
+  <div id="div-inline"></div>
+
+  <br>
+
+  <span id="span-block">A</span>
+  <span id="span-block">B</span>
+  <span id="span-block">C</span>
+
+  <br>
+  <!-- Ocultar elementos -->
+
+  <div id="div-display-none">
+    Testando display none
+  </div>
+
+ <!-- Posicionamentos -->
+  <!-- Terminar -->
+
+
+</body>
+
+</html>
