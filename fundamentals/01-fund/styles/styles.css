@@ -135,3 +135,9 @@ h3 {
 #div-display-none {
   display: none;
 }
+
+.div-input{
+  margin: 5px;
+  padding-bottom: 10px;
+}
+

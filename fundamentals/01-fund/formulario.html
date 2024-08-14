@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="./index.html">Voltar</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Cadastro de Usuário</h1>
+
+    <form>
+
+      <div class="div-input">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome">
+      </div>
+      <div class="div-input">
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone">
+      </div>
+      <div class="div-input">
+        <label for="email">Email:</label>
+        <input type="email" name="email">
+      </div>
+      <div class="div-input">
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha">
+      </div>
+      <div class="div-input">
+        <label for="sexo">Sexo:</label>
+        <input type="radio" name="sexo" value="masculino">Masculino
+        <input type="radio" name="sexo" value="feminio">Feminino
+      </div>
+      <div class="div-input">
+        <label for="uf">UF</label>
+        <select name="uf">
+          <option value="DF">DF</option>
+          <option value="SP">SP</option>
+          <option value="GO">GO</option>
+        </select>
+      </div>
+      <div class="div-input">
+        <label for="hoobies">Hobbies</label>
+        <fieldset>
+          <input type="checkbox" name="hobbies" value="futebol">Futebol
+          <input type="checkbox" name="hobbies" value="xadrez">Xadrez
+          <input type="checkbox" name="hobbies" value="esportes">Esportes
+          <input type="checkbox" name="hobbies" value="musica">Musica
+          <input type="checkbox" name="hobbies" value="cinema">Cinema
+          <input type="checkbox" name="hobbies" value="leitura">Leitura
+        </fieldset>
+      </div>
+      <div class="div-input">
+        <label for="obs">Observação:</label>
+        <textarea name="obs" cols="30" rows="10"></textarea>
+      </div>
+      <div class="div-input">
+        <button type="button"><a href="./index.html" style="text-decoration: none; color: black;">Voltar</a></button>
+        <button type="reset">Limpar</button>
+        <button type="submit">Salvar</button>
+
+      </div>
+
+    </form>
+
+  </main>
+
+
+</body>
+
+</html>
