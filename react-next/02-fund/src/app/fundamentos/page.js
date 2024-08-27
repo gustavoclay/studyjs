@@ -1,4 +1,6 @@
 import Cabecalho from './Cabecalho'
+import Familia from './Familia'
+import Filho from './Filho'
 import ImagemAleatoria from './Imagem'
 import NumeroAleatorio from './NumeroAleatorio'
 import NumeroMaior from './NumeroMaior'
@@ -13,7 +15,7 @@ export default function FundamentosPage() {
       <Cabecalho titulo="Clientes" subtitulo="Meus Clientes"/> */}
 
       <Cabecalho titulo="Fundamentos" subtitulo="Página de Fundamentos de React/Next" />
-      <main>
+      <main style={{ paddingBottom: '500px' }}>
         {/* Comentários */}
         {/* <h1>Fundamentos</h1>
         <p>Este é um parágrafo</p>*/}
@@ -39,6 +41,20 @@ export default function FundamentosPage() {
         </div>
 
         <hr />
+
+        <Familia nomeFamilia="Soares">
+          <Filho nome="Pedro" sobreNome="Soares" />
+          <Filho nome="João" sobreNome="Soares" />
+          <Filho nome="Marcia" sobreNome="Soares" />
+          <Filho nome="Ellen" sobreNome="Soares" />
+        </Familia>
+
+        <Familia nomeFamilia="Xororo">
+          <Filho nome="Sandy" sobreNome="Xororo" />
+          <Filho nome="Junior" sobreNome="Xororo" />
+        </Familia>
+
+
       </main>
     </>
   )
