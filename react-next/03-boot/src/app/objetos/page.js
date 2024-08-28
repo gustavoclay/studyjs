@@ -55,7 +55,7 @@ export default function page() {
   return (
     <Pagina titulo="Objetos">
 
-      <Row xs={1} sm={2} md={4} lg={6} className="py-4">
+      <Row xs={1} sm={2} md={4} xl={6} className="py-4">
 
         {clientes.map(cliente => {
           return (

@@ -49,6 +49,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Componentes
 - Propriedades
 - Componente Pai e Filho
+- CSS Modules e inline
 
 05
 - Instalar Bootstrap
