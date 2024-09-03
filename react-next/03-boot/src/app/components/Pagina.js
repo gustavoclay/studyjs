@@ -13,11 +13,13 @@ export default function Pagina({ titulo, ...props }) {
             <Nav.Link href="/fundamentos">Fundamentos</Nav.Link>
             <Nav.Link href="/arrays">Arrays</Nav.Link>
             <Nav.Link href="/objetos">Objetos</Nav.Link>
+            <Nav.Link href="/estados">State</Nav.Link>
+            <Nav.Link href="/loja/categorias">Loja</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
 
-      <div className="bg-secondary text-white text-center p-3">
+      <div className="bg-secondary text-white text-center p-3 mb-3">
         <h1>{titulo}</h1>
       </div>
 
