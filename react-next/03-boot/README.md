@@ -53,7 +53,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 05
 - Instalar Bootstrap
-- Instalar Axios
 - Criar Componente Página com Boostrap
 - Server Components e Client Components
 - Arrays
@@ -61,6 +60,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Controle de Estados
 
 06
+- Instalar Axios
 - Consumo de API com Axios
 - React Hooks - States e Events
 - Constuir Loja
