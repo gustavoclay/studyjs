@@ -14,7 +14,7 @@ export default function Pagina({ titulo, ...props }) {
             <Nav.Link href="/arrays">Arrays</Nav.Link>
             <Nav.Link href="/objetos">Objetos</Nav.Link>
             <Nav.Link href="/estados">State</Nav.Link>
-            <Nav.Link href="/loja/categorias">Loja</Nav.Link>
+            <Nav.Link href="/loja">Loja</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

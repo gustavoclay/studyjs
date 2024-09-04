@@ -55,15 +55,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Instalar Bootstrap
 - Criar Componente Página com Boostrap
 - Server Components e Client Components
+
+06
 - Arrays
 - Objetos / Array de Objetos
 - Controle de Estados
-
-06
 - Instalar Axios
 - Consumo de API com Axios
-- React Hooks - States e Events
-- Constuir Loja
-- Rotas e Rotas Aninhadas
+- useState e useEffect
 
 07
+- Constuir Loja
+- Rotas e Rotas Aninhadas
+- React Hooks - States e Events
