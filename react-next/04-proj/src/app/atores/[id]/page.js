@@ -1,10 +1,10 @@
 'use client'
 
-import Galeria from '@/app/components/Galeria'
 import { useEffect, useState } from 'react'
 import { CardImg, Col, Row } from 'react-bootstrap'
 import Pagina from '../../components/Pagina'
 import apiFilmes from '../../services/apiFilmes'
+import Link from 'next/link'
 
 
 export default function page(props) {
@@ -16,9 +16,8 @@ export default function page(props) {
 
   useEffect(() => {
     getAtor()
-    getFilmes()
-    getSeries()
     getImagens()
+    getFilmes()
   }, [])
 
   async function getAtor() {
@@ -33,53 +32,70 @@ export default function page(props) {
     setFilmes(filmesRecebidos)
   }
 
-  async function getSeries() {
-    const resultado = await apiFilmes.get('/person/' + props.params.id + '/tv_credits?language=pt-BR')
-    const seriesRecebidas = resultado.data.cast
-    setSeries(seriesRecebidas)
-  }
-
   async function getImagens() {
     const resultado = await apiFilmes.get('/person/' + props.params.id + '/images?language=pt-BR')
     const imagensRecebidas = resultado.data.profiles
     setImagens(imagensRecebidas)
   }
 
-  function retornarAtor() {
-    return (
-      <Pagina titulo={ator.name}>
-        <Row>
-
-          <Col md={3}>
-            <CardImg variant="top" src={'https://image.tmdb.org/t/p/w500/' + ator.profile_path} />
-          </Col>
-
-          <Col md={9}>
-            <p><strong>Data de Nascimento: </strong>{ator.birthday}</p>
-            <p><strong>Nacionalidade: </strong>{ator.place_of_birth}</p>
-            <p><strong>Biografia: </strong></p>
-            <p>{ator.biography}</p>
-          </Col>
-
-        </Row>
-
-        <Galeria titulo="Imagens" lista={imagens} link="/atores" />
-
-        <Galeria titulo="Filmes" lista={filmes} link="/filmes" />
-
-        <Galeria titulo="Séries" lista={series} link="/series" />
-
-      </Pagina>
-    )
-  }
-
-  function retornarCarregando() {
-    return (
-      <Pagina>Carregando...</Pagina>
-    )
-  }
-
   return (
-    ator.id ? retornarAtor() : retornarCarregando()
+    <Pagina titulo={ator.name}>
+
+      {ator.id && (
+        <>
+
+          {/* Informações do Ator */}
+          <Row>
+            <Col md={3}>
+              <CardImg variant="top" src={'https://image.tmdb.org/t/p/w500/' + ator.profile_path} />
+            </Col>
+
+            <Col md={9}>
+              <p><strong>Data de Nascimento: </strong>{ator.birthday}</p>
+              <p><strong>Nacionalidade: </strong>{ator.place_of_birth}</p>
+              <p><strong>Biografia: </strong></p>
+              <p>{ator.biography}</p>
+            </Col>
+          </Row>
+
+          {/* Imagens do Ator */}
+          <div className='mt-2'>
+            <h2 className='text-center'>Imagens</h2>
+          </div>
+
+          <Row md={6}>
+            {imagens.map(imagem => {
+              return (
+                <Col className='py-2'>
+                  <CardImg src={'https://image.tmdb.org/t/p/w500/' + imagem.file_path} />
+                </Col>
+              )
+            })}
+          </Row>
+
+          {/* Filmes do Ator */}
+          <div className='mt-2'>
+            <h2 className='text-center'>Filmes</h2>
+          </div>
+
+          <Row md={4}>
+            {filmes.map(filme => {
+              return (
+                <Col className='py-2'>
+                  <Link href={'/filmes/' + filme.id}>
+                    <CardImg src={'https://image.tmdb.org/t/p/w500/' + filme.poster_path} />
+                  </Link>
+                </Col>
+              )
+            })}
+
+          </Row>
+
+        </>
+
+
+      )}
+
+    </Pagina>
   )
 }
