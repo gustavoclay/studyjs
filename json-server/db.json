@@ -1,0 +1,371 @@
+{
+  "copa_mundo": {
+    "imagem": "https://i.pinimg.com/736x/60/ff/f1/60fff1ea2a1298cd8144d092bed6fb76.jpg",
+    "ano": 2022,
+    "pais_sede": "Catar",
+    "data_inicio": "2022-11-20",
+    "data_fim": "2022-12-18",
+    "participantes": 32,
+    "descricao": "A 22ª edição da Copa do Mundo foi a primeira realizada no Oriente Médio, entre os dias 20 de novembro e 18 de dezembro de 2022. Geralmente, o mundial de futebol é disputado em junho e julho, mas, devido às altas temperaturas do verão no Catar, que passam dos 40 ºC, houve essa mudança. Com isso, a realização da Copa de 2022 ficou no período do outono, quando o clima costuma ficar entre 25 ºC e 30 ºC.",
+    "vencedor": {
+      "pais": "Argentina",
+      "placar_final": "3-3 (4-2 nos pênaltis)",
+      "adversario_final": "França",
+      "data_final": "2022-12-18",
+      "local_final": "Estádio Lusail, Lusail"
+    },
+    "artilheiro": {
+      "jogador": "Kylian Mbappé",
+      "pais": "França",
+      "gols": 8
+    },
+    "melhor_jogador": {
+      "jogador": "Lionel Messi",
+      "pais": "Argentina"
+    },
+    "estadios": [
+      {
+        "nome": "Estádio Lusail",
+        "imagem": "https://i.pinimg.com/1200x/80/3d/0f/803d0f07020dac1ac638e6dfcc7a0607.jpg"
+      },
+      {
+        "nome": "Estádio Al Bayt",
+        "imagem": "https://i.pinimg.com/1200x/d9/87/a5/d987a5f490e32083c094839e78e97e67.jpg"
+      },
+      {
+        "nome": "Estádio 974",
+        "imagem": "https://i.pinimg.com/1200x/63/47/7b/63477b146143956117fdeb6d06b7b2f6.jpg"
+      },
+      {
+        "nome": "Estádio Internacional Khalifa",
+        "imagem": "https://i.pinimg.com/1200x/7c/d4/3f/7cd43f44ceb9a451011c6fb5b4c7b6ad.jpg"
+      }
+    ]
+  },
+  "selecoes": [
+    {
+      "id": "1",
+      "nome": "Brasil",
+      "imagem": "https://i.pinimg.com/736x/03/4b/ae/034baeabba9a31dc9762351c2d101731.jpg",
+      "treinador": "Dorival Junior",
+      "imagem_treinador": "https://i.pinimg.com/736x/4e/8c/77/4e8c77aacd31ea43e59cee77da16840c.jpg",
+      "participacoes_copa_mundo": 22,
+      "titulos_copa_mundo": 5,
+      "administrador": "CBF - Confederação Brasileira de Futebol",
+      "estadio": "Maracanã",
+      "fundacao": 1914,
+      "descricao": "A Seleção Brasileira de Futebol Masculino é uma das mais vitoriosas do mundo, com cinco títulos da Copa do Mundo. Conhecida pelo jogo bonito, já teve craques como Pelé, Ronaldo e Neymar.",
+      "jogadores": [
+        {
+          "id": "1",
+          "nome": "Alisson",
+          "numero": "01",
+          "imagem": "https://i.pinimg.com/736x/d1/a4/ba/d1a4ba149753aef117e806029f891ed2.jpg"
+        },
+        {
+          "id": "2",
+          "nome": "Danilo",
+          "numero": "02",
+          "imagem": "https://i.pinimg.com/736x/26/97/5f/26975fb9e00b4f5ab0672e0379e0a07f.jpg"
+        },
+        {
+          "id": "3",
+          "nome": "Thiago Silva",
+          "numero": "03",
+          "imagem": "https://i.pinimg.com/736x/5c/f1/af/5cf1af138bb144ba679cb8ee96cb2c7a.jpg"
+        },
+        {
+          "id": "4",
+          "nome": "Marquinhos",
+          "numero": "04",
+          "imagem": "https://i.pinimg.com/736x/0d/63/3e/0d633e78667a2b2daa1a3fa7837ebc1a.jpg"
+        },
+        {
+          "id": "5",
+          "nome": "Alex Sandro",
+          "numero": "05",
+          "imagem": "https://i.pinimg.com/736x/c1/f3/53/c1f35369a8c352e71031ced93cbd3984.jpg"
+        },
+        {
+          "id": "6",
+          "nome": "Casemiro",
+          "numero": "06",
+          "imagem": "https://i.pinimg.com/736x/62/56/ee/6256eed0b69864a97ec5f9fc1ca97157.jpg"
+        },
+        {
+          "id": "7",
+          "nome": "Paquetá",
+          "numero": "07",
+          "imagem": "https://i.pinimg.com/736x/60/8f/db/608fdb49d8c95fd4399a41ed470f36dd.jpg"
+        },
+        {
+          "id": "8",
+          "nome": "Fred",
+          "numero": "08",
+          "imagem": "https://i.pinimg.com/736x/f3/ef/97/f3ef978107ed4278f619c0f7819e822e.jpg"
+        },
+        {
+          "id": "9",
+          "nome": "Neymar",
+          "numero": "09",
+          "imagem": "https://i.pinimg.com/736x/56/32/26/56322603f3f95b66ee993abc193b7c94.jpg"
+        },
+        {
+          "id": "10",
+          "nome": "Vinicius Júnior",
+          "numero": "10",
+          "imagem": "https://i.pinimg.com/736x/8b/90/a3/8b90a360fb9b26d8ce3f96b4834d0c99.jpg"
+        },
+        {
+          "id": "11",
+          "nome": "Richarlison",
+          "numero": "11",
+          "imagem": "https://i.pinimg.com/736x/fb/66/7d/fb667db98949471ef735215666a7c103.jpg"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Argentina",
+      "imagem": "https://i.pinimg.com/736x/d6/dd/6b/d6dd6b10b35c0552de7e342b1c2cb262.jpg",
+      "treinador": "Lionel Scaloni",
+      "imagem_treinador": "https://i.pinimg.com/736x/6d/b2/cf/6db2cf3ae126cb9deb2f12c0c0d0e929.jpg",
+      "participacoes_copa_mundo": 18,
+      "titulos_copa_mundo": 3,
+      "administrador": "AFA - Associação do Futebol Argentino",
+      "estadio": "Monumental de Núñez",
+      "fundacao": 1893,
+      "descricao": "A Argentina é uma das seleções mais fortes do futebol mundial, tricampeã da Copa do Mundo. Ídolos como Maradona e Messi marcaram a história da equipe.",
+      "jogadores": [
+        {
+          "id": "1",
+          "nome": "Emiliano Martínez",
+          "numero": "01",
+          "imagem": "https://i.pinimg.com/736x/79/cd/14/79cd14ea5c35fee63f1ab8324196a0e1.jpg"
+        },
+        {
+          "id": "2",
+          "nome": "Nicolás Otamendi",
+          "numero": "02",
+          "imagem": "https://i.pinimg.com/736x/37/83/60/3783602c65048f13d6603d44ea7ec7f8.jpg"
+        },
+        {
+          "id": "3",
+          "nome": "Cristian Romero",
+          "numero": "03",
+          "imagem": "https://i.pinimg.com/736x/72/3e/38/723e38378fe64efa7fb050170c0e2a5f.jpg"
+        },
+        {
+          "id": "4",
+          "nome": "Lisandro Martínez",
+          "numero": "04",
+          "imagem": "https://i.pinimg.com/736x/ef/41/1a/ef411a49d8a07c5c0f82ecc017f657a5.jpg"
+        },
+        {
+          "id": "5",
+          "nome": "Rodrigo De Paul",
+          "numero": "05",
+          "imagem": "https://i.pinimg.com/736x/bd/ca/d2/bdcad2af43d947550efa2a9f3ebb52c2.jpg"
+        },
+        {
+          "id": "6",
+          "nome": "Leandro Paredes",
+          "numero": "06",
+          "imagem": "https://i.pinimg.com/736x/b8/d2/f3/b8d2f387fcff6776bbb9b13de7dcbcbf.jpg"
+        },
+        {
+          "id": "7",
+          "nome": "Lautaro Martínez",
+          "numero": "07",
+          "imagem": "https://i.pinimg.com/736x/79/6c/ae/796cae9ebbeab677eb65cc74ac3caad7.jpg"
+        },
+        {
+          "id": "8",
+          "nome": "Lionel Messi",
+          "numero": "08",
+          "imagem": "https://i.pinimg.com/736x/3f/89/83/3f898373451b7db3bdb963f772b948f8.jpg"
+        },
+        {
+          "id": "9",
+          "nome": "Paulo Dybala",
+          "numero": "09",
+          "imagem": "https://i.pinimg.com/736x/96/db/a7/96dba758346a4a1e3a5927839f6d8750.jpg"
+        },
+        {
+          "id": "10",
+          "nome": "Angel Di Maria",
+          "numero": "10",
+          "imagem": "https://i.pinimg.com/736x/ec/06/c6/ec06c6ffbee6312302ae6ebc4a6723ea.jpg"
+        },
+        {
+          "id": "11",
+          "nome": "Sergio Agüero",
+          "numero": "11",
+          "imagem": "https://i.pinimg.com/736x/26/dc/63/26dc632f49f0793d7fae9843d8ffb701.jpg"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nome": "Portugal",
+      "imagem": "https://i.pinimg.com/736x/c7/ab/69/c7ab69e502bee157ba89e07b5bc687a1.jpg",
+      "treinador": "Roberto Martínez",
+      "imagem_treinador": "https://i.pinimg.com/736x/6d/3a/86/6d3a86b9ccda28daa55a07a4161ab226.jpg",
+      "participacoes_copa_mundo": 8,
+      "titulos_copa_mundo": 0,
+      "administrador": "FPF - Federação Portuguesa de Futebol",
+      "estadio": "Estádio da Luz",
+      "fundacao": 1914,
+      "descricao": "Portugal se consolidou como uma potência no futebol europeu, com destaque para Cristiano Ronaldo, um dos maiores jogadores da história.",
+      "jogadores": [
+        {
+          "id": "1",
+          "nome": "Rui Patrício",
+          "numero": "01",
+          "imagem": "https://i.pinimg.com/736x/8e/91/93/8e91931c08abe612c51f36c7fb3b1bc2.jpg"
+        },
+        {
+          "id": "2",
+          "nome": "João Cancelo",
+          "numero": "02",
+          "imagem": "https://i.pinimg.com/736x/83/fc/9e/83fc9edd21d04808582c082103962249.jpg"
+        },
+        {
+          "id": "3",
+          "nome": "Pepe",
+          "numero": "03",
+          "imagem": "https://i.pinimg.com/736x/c4/a8/99/c4a8997215f60303690f26f68305b9ad.jpg"
+        },
+        {
+          "id": "4",
+          "nome": "Rúben Dias",
+          "numero": "04",
+          "imagem": "https://i.pinimg.com/736x/cd/ed/73/cded73cda9b81fbf765d436c587ba90e.jpg"
+        },
+        {
+          "id": "5",
+          "nome": "Nuno Mendes",
+          "numero": "05",
+          "imagem": "https://i.pinimg.com/736x/f0/6e/46/f06e46ff8abcc57a03fa2cb1f3d09f4d.jpg"
+        },
+        {
+          "id": "6",
+          "nome": "João Moutinho",
+          "numero": "06",
+          "imagem": "https://i.pinimg.com/736x/1a/1e/7a/1a1e7a0565c7e08bbc70ee0cec432a28.jpg"
+        },
+        {
+          "id": "7",
+          "nome": "Bruno Fernandes",
+          "numero": "07",
+          "imagem": "https://i.pinimg.com/736x/b7/c3/28/b7c328531bf2d9faaf6e97087764d0b0.jpg"
+        },
+        {
+          "id": "8",
+          "nome": "João Félix",
+          "numero": "08",
+          "imagem": "https://i.pinimg.com/736x/b9/3d/c3/b93dc348e117892a601ac9fe477cc4ff.jpg"
+        },
+        {
+          "id": "9",
+          "nome": "Cristiano Ronaldo",
+          "numero": "09",
+          "imagem": "https://i.pinimg.com/736x/b9/4f/91/b94f9159c871399dffd894fbe5e470b2.jpg"
+        },
+        {
+          "id": "10",
+          "nome": "Diogo Jota",
+          "numero": "10",
+          "imagem": "https://i.pinimg.com/736x/93/81/32/9381323ce5ecc55ef50dae91de8d9aee.jpg"
+        },
+        {
+          "id": "11",
+          "nome": "André Silva",
+          "numero": "11",
+          "imagem": "https://i.pinimg.com/736x/9a/66/d6/9a66d6d7628727067a9d26d72e776957.jpg"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "nome": "França",
+      "imagem": "https://i.pinimg.com/736x/4d/b3/c8/4db3c84a66c09172c78f9d6e794eebef.jpg",
+      "treinador": "Didier Deschamps",
+      "imagem_treinador": "https://i.pinimg.com/736x/d0/fd/6a/d0fd6ae68312abec3f9746b153494cdb.jpg",
+      "participacoes_copa_mundo": 16,
+      "titulos_copa_mundo": 2,
+      "administrador": "FFF - Federação Francesa de Futebol",
+      "estadio": "Stade de France",
+      "fundacao": 1904,
+      "descricao": "A França, bicampeã mundial, é uma das seleções mais respeitadas da atualidade, com craques como Zinedine Zidane e Kylian Mbappé.",
+      "jogadores": [
+        {
+          "id": "1",
+          "nome": "Hugo Lloris",
+          "numero": "01",
+          "imagem": "https://i.pinimg.com/736x/b9/d0/3d/b9d03dbcfc518e93e23fd9b475160138.jpg"
+        },
+        {
+          "id": "2",
+          "nome": "Benjamin Pavard",
+          "numero": "02",
+          "imagem": "https://i.pinimg.com/736x/2b/d0/6e/2bd06e347dc3ff0fb26b36d7a5f73ca7.jpg"
+        },
+        {
+          "id": "3",
+          "nome": "Raphaël Varane",
+          "numero": "03",
+          "imagem": "https://i.pinimg.com/736x/e2/52/67/e252676f83fc4b3ababba5e38cf64460.jpg"
+        },
+        {
+          "id": "4",
+          "nome": "Presnel Kimpembe",
+          "numero": "04",
+          "imagem": "https://i.pinimg.com/736x/42/59/d4/4259d4c86bd0e26a67aecfedd25c6208.jpg"
+        },
+        {
+          "id": "5",
+          "nome": "Lucas Hernandez",
+          "numero": "05",
+          "imagem": "https://i.pinimg.com/736x/4c/8a/dc/4c8adcdacbe76c00670e43eeecd2dcfe.jpg"
+        },
+        {
+          "id": "6",
+          "nome": "Paul Pogba",
+          "numero": "06",
+          "imagem": "https://i.pinimg.com/736x/dd/2a/75/dd2a752dc64ba65c87284d5356bb975e.jpg"
+        },
+        {
+          "id": "7",
+          "nome": "Antoine Griezmann",
+          "numero": "07",
+          "imagem": "https://i.pinimg.com/736x/95/b9/73/95b9737aa0572eec73d46af561212e61.jpg"
+        },
+        {
+          "id": "8",
+          "nome": "Olivier Giroud",
+          "numero": "08",
+          "imagem": "https://i.pinimg.com/736x/c1/f7/4c/c1f74ccfbe7a3d7de0ca38527ada8193.jpg"
+        },
+        {
+          "id": "9",
+          "nome": "Kylian Mbappé",
+          "numero": "09",
+          "imagem": "https://i.pinimg.com/736x/19/db/34/19db340573e8548067fb3b793bc3ee67.jpg"
+        },
+        {
+          "id": "10",
+          "nome": "N'Golo Kanté",
+          "numero": "10",
+          "imagem": "https://i.pinimg.com/736x/e9/0b/d6/e90bd644dc38557379f36e506e33218c.jpg"
+        },
+        {
+          "id": "11",
+          "nome": "Kingsley Coman",
+          "numero": "11",
+          "imagem": "https://i.pinimg.com/736x/02/ec/d1/02ecd19913746226f735221e7c73192e.jpg"
+        }
+      ]
+    }
+  ]
+}
