@@ -18,7 +18,7 @@ export default function Pagina(props) {
           <Nav className="me-auto">
             <NavDropdown title="Formulários" id="basic-nav-dropdown">
               <NavDropdown.Item href="/formulario/nome">Nome</NavDropdown.Item>
-              <NavDropdown.Item href="/formulario/imc">Nome</NavDropdown.Item>
+              <NavDropdown.Item href="/formulario/imc">Calculadora de IMC</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Container>
