@@ -28,8 +28,6 @@ export default function ForumarioImcPage() {
   function handleSubmit(event) {
     event.preventDefault()
 
-    setShowModalResultado(true)
-
     console.log({ nome, genero, peso, altura })
 
     const pesoNumerico = Number(peso)
@@ -51,6 +49,8 @@ export default function ForumarioImcPage() {
     } else if (imc >= 40) {
       setClassificacao('Obesidade grau 3')
     }
+
+    setShowModalResultado(true)
 
   }
 
