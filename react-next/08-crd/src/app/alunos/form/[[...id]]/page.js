@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import { useRouter } from "next/navigation";
 
 import { Button, Col, Form, Row } from "react-bootstrap";
+import { FaArrowLeft } from "react-icons/fa";
 import { FaCheck, FaTrash } from "react-icons/fa6";
 import ReactInputMask from "react-input-mask";
 import { toast } from 'react-toastify';
@@ -357,8 +358,9 @@ export default function AlunosForm({ params }) {
             </Row>
 
             <Form.Group className="mb-3 text-end">
+              <Button type="button" variant="secondary" className="me-2" onClick={() => route.push('/alunos')}><FaArrowLeft /> Voltar</Button>
               <Button type="button" className="me-2" onClick={handleReset}><FaTrash /> Limpar</Button>
-              <Button type="submit" variant="success"><FaCheck />Salvar</Button>
+              <Button type="submit" variant="success"><FaCheck /> Salvar</Button>
             </Form.Group>
 
           </Form>
