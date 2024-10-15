@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { FaCheck, FaTrash } from "react-icons/fa6";
 import * as Yup from 'yup';
+import ReactInputMask from "react-input-mask";
 
 export default function CadastroPage() {
 
@@ -63,7 +64,8 @@ export default function CadastroPage() {
         {({ values, handleReset, handleSubmit, handleChange, handleBlur, touched, errors }) => (
           <Form onSubmit={handleSubmit}>
 
-            <h3>Dados Pessoais</h3>
+            <h3 className="text-center">Dados Pessoais</h3>
+            <hr />
 
             <Row className="mb-3">
               <Form.Group as={Col}>
@@ -124,20 +126,25 @@ export default function CadastroPage() {
             </Row>
 
             <Row className="mb-3">
-              <Form.Group as={Col} >
-                <Form.Label>Telefone</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="telefone"
-                  value={values.telefone}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  isValid={touched.telefone && !errors.telefone}
-                  isInvalid={touched.telefone && !!errors.telefone}
-                />
-                <Form.Control.Feedback type="invalid">{errors.telefone}</Form.Control.Feedback>
-              </Form.Group>
+              <Col md={3}>
+                <Form.Group>
+                  <Form.Label>Telefone</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="telefone"
+                    value={values.telefone}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    isValid={touched.telefone && !errors.telefone}
+                    isInvalid={touched.telefone && !!errors.telefone}
+                  />
+                  <Form.Control.Feedback type="invalid">{errors.telefone}</Form.Control.Feedback>
+                </Form.Group>
+              </Col>
             </Row>
+
+            <h3 className="text-center">Endereço</h3>
+            <hr />
 
             <Row className="mb-3">
               <Form.Group as={Col}>
@@ -238,6 +245,9 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.endereco?.UF}</Form.Control.Feedback>
               </Form.Group>
             </Row>
+
+            <h3 className="text-center">Acadêmico</h3>
+            <hr />
 
             <Row className="mb-3">
               <Form.Group as={Col}>
