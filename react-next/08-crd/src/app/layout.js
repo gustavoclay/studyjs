@@ -3,6 +3,8 @@ import "./globals.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",

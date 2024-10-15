@@ -2,28 +2,25 @@
 
 import Pagina from "@/components/Pagina";
 import { Formik } from "formik";
+import { useRouter } from "next/navigation";
+
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { FaCheck, FaTrash } from "react-icons/fa6";
 import ReactInputMask from "react-input-mask";
+import { toast } from 'react-toastify';
 import { v4 as uuid } from 'uuid';
 import * as Yup from 'yup';
 
-export default function CadastroPage() {
+export default function AlunosForm({ params }) {
+
+  const route = useRouter()
+
+  const alunos = JSON.parse(localStorage.getItem('alunos')) || []
+
+  const dados = alunos.find(aluno => aluno.id == params.id)
 
 
-  function cadastrar(values) {
-
-    const aluno = values
-
-    console.log("🚀 ~ cadastrar ~ aluno:", aluno)
-
-    aluno.id = uuid()
-
-    localStorage.setItem(aluno.id, JSON.stringify(aluno))
-  }
-
-
-  const initialValues = {
+  const alunoInicial = {
     nome: '',
     sobrenome: '',
     email: '',
@@ -43,6 +40,8 @@ export default function CadastroPage() {
     periodo: '',
     matricula: ''
   }
+
+  const initialValues = dados || alunoInicial
 
   const validationSchema = Yup.object().shape({
     nome: Yup.string().required('Nome é obrigatório'),
@@ -64,6 +63,25 @@ export default function CadastroPage() {
     periodo: Yup.string().required('Período é obrigatório'),
     matricula: Yup.string().required('Matrícula é obrigatória')
   })
+
+
+  function cadastrar(aluno) {
+
+    if (aluno.id) {
+      const index = alunos.findIndex(aluno => aluno.id === aluno.id)
+      alunos[index] = aluno
+    } else {
+      aluno.id = uuid()
+      alunos.push(aluno)
+    }
+
+    localStorage.setItem('alunos', JSON.stringify(alunos))
+
+
+    toast.success(`Aluno ${aluno.nome} ${params.id ? 'editado' : 'cadastrado'} com sucesso!`);
+
+    route.push('/alunos')
+  }
 
   return (
     <Pagina titulo={"Cadastro de Aluno"}>

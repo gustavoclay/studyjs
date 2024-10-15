@@ -1,6 +1,7 @@
 'use client'
 
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { ToastContainer } from 'react-toastify'
 
 
 export default function Pagina(props) {
@@ -22,6 +23,7 @@ export default function Pagina(props) {
               <NavDropdown.Item href="/formulario/imcformik">Calculadora de IMC - Formik</NavDropdown.Item>
               <NavDropdown.Item href="/formulario/cadastro">Cadastro de Aluno</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/alunos">Alunos</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -37,6 +39,9 @@ export default function Pagina(props) {
       <Container className='mt-2'>
         {children}
       </Container>
+
+      {/* Toast */}
+      <ToastContainer />
 
     </>
   )
