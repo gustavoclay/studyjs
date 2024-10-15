@@ -4,8 +4,8 @@ import Pagina from "@/components/Pagina";
 import { Formik } from "formik";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { FaCheck, FaTrash } from "react-icons/fa6";
-import * as Yup from 'yup';
 import ReactInputMask from "react-input-mask";
+import * as Yup from 'yup';
 
 export default function CadastroPage() {
 
@@ -126,21 +126,21 @@ export default function CadastroPage() {
             </Row>
 
             <Row className="mb-3">
-              <Col md={3}>
-                <Form.Group>
-                  <Form.Label>Telefone</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="telefone"
-                    value={values.telefone}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.telefone && !errors.telefone}
-                    isInvalid={touched.telefone && !!errors.telefone}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.telefone}</Form.Control.Feedback>
-                </Form.Group>
-              </Col>
+              <Form.Group as={Col} md={6}>
+                <Form.Label>Telefone</Form.Label>
+                <Form.Control as={ReactInputMask}
+                  mask={"(99)99999-9999"}
+                  placeholder="(00)00000-0000"
+                  type="text"
+                  name="telefone"
+                  value={values.telefone}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  isValid={touched.telefone && !errors.telefone}
+                  isInvalid={touched.telefone && !!errors.telefone}
+                />
+                <Form.Control.Feedback type="invalid">{errors.telefone}</Form.Control.Feedback>
+              </Form.Group>
             </Row>
 
             <h3 className="text-center">Endereço</h3>
@@ -149,7 +149,9 @@ export default function CadastroPage() {
             <Row className="mb-3">
               <Form.Group as={Col}>
                 <Form.Label>CEP</Form.Label>
-                <Form.Control
+                <Form.Control as={ReactInputMask}
+                  mask={"99999-999"}
+                  placeholder="00000-000"
                   type="text"
                   name="endereco.cep"
                   value={values.endereco.cep}
@@ -307,9 +309,11 @@ export default function CadastroPage() {
             </Row>
 
             <Row className="mb-3">
-              <Form.Group as={Col}>
+              <Form.Group as={Col} md={4}>
                 <Form.Label>Matrícula</Form.Label>
-                <Form.Control
+                <Form.Control as={ReactInputMask}
+                  mask={"999999"}
+                  placeholder="000000"
                   type="text"
                   name="matricula"
                   value={values.matricula}
