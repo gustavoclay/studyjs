@@ -12,14 +12,24 @@ export default function CadastroPage() {
 
 
   function cadastrar(values) {
-
+    // criar um novo aluno com os dados do formulário
     const aluno = values
 
+    // gerar um id único para o aluno
+    aluno.id = uuid()
     console.log("🚀 ~ cadastrar ~ aluno:", aluno)
 
-    aluno.id = uuid()
+    // buscar os alunos do localStorage
+    const alunos = JSON.parse(localStorage.getItem('alunos')) || '[]'
 
-    localStorage.setItem(aluno.id, JSON.stringify(aluno))
+    // adicionar o novo aluno na lista
+    alunos.push(aluno)
+
+    // salvar a lista de alunos no localStorage
+    localStorage.setItem('alunos', JSON.stringify(alunos))
+
+    alert('Aluno cadastrado com sucesso!')
+
   }
 
 
@@ -41,7 +51,8 @@ export default function CadastroPage() {
     faculdade: '',
     curso: '',
     periodo: '',
-    matricula: ''
+    matricula: '',
+    foto: ''
   }
 
   const validationSchema = Yup.object().shape({
@@ -62,7 +73,8 @@ export default function CadastroPage() {
     faculdade: Yup.string().required('Faculdade é obrigatória'),
     curso: Yup.string().required('Curso é obrigatório'),
     periodo: Yup.string().required('Período é obrigatório'),
-    matricula: Yup.string().required('Matrícula é obrigatória')
+    matricula: Yup.string().required('Matrícula é obrigatória'),
+    foto: Yup.string()
   })
 
   return (
@@ -81,7 +93,7 @@ export default function CadastroPage() {
 
             <Row className="mb-3">
               <Form.Group as={Col}>
-                <Form.Label>Nome</Form.Label>
+                <Form.Label>Nome:</Form.Label>
                 <Form.Control
                   type="text"
                   name="nome"
@@ -94,7 +106,7 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.nome}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>Sobrenome</Form.Label>
+                <Form.Label>Sobrenome:</Form.Label>
                 <Form.Control
                   type="text"
                   name="sobrenome"
@@ -110,7 +122,7 @@ export default function CadastroPage() {
 
             <Row className="mb-3">
               <Form.Group as={Col}>
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Email:</Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
@@ -123,7 +135,7 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>Data de Nascimento</Form.Label>
+                <Form.Label>Data de Nascimento:</Form.Label>
                 <Form.Control
                   type="date"
                   name="dataNascimento"
@@ -139,7 +151,7 @@ export default function CadastroPage() {
 
             <Row className="mb-3">
               <Form.Group as={Col} md={6}>
-                <Form.Label>Telefone</Form.Label>
+                <Form.Label>Telefone:</Form.Label>
                 <Form.Control as={ReactInputMask}
                   mask={"(99)99999-9999"}
                   placeholder="(00)00000-0000"
@@ -160,7 +172,7 @@ export default function CadastroPage() {
 
             <Row className="mb-3">
               <Form.Group as={Col}>
-                <Form.Label>CEP</Form.Label>
+                <Form.Label>CEP:</Form.Label>
                 <Form.Control as={ReactInputMask}
                   mask={"99999-999"}
                   placeholder="00000-000"
@@ -175,7 +187,7 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.endereco?.cep}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>Logradouro</Form.Label>
+                <Form.Label>Logradouro:</Form.Label>
                 <Form.Control
                   type="text"
                   name="endereco.logradouro"
@@ -191,7 +203,7 @@ export default function CadastroPage() {
 
             <Row className="mb-3">
               <Form.Group as={Col}>
-                <Form.Label>Número</Form.Label>
+                <Form.Label>Número:</Form.Label>
                 <Form.Control
                   type="text"
                   name="endereco.numero"
@@ -204,7 +216,7 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.endereco?.numero}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>Complemento</Form.Label>
+                <Form.Label>Complemento:</Form.Label>
                 <Form.Control
                   type="text"
                   name="endereco.complemento"
@@ -220,7 +232,7 @@ export default function CadastroPage() {
 
             <Row className="mb-3">
               <Form.Group as={Col}>
-                <Form.Label>Cidade</Form.Label>
+                <Form.Label>Cidade:</Form.Label>
                 <Form.Control
                   type="text"
                   name="endereco.cidade"
@@ -233,7 +245,7 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.endereco?.cidade}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>Estado</Form.Label>
+                <Form.Label>Estado:</Form.Label>
                 <Form.Control
                   type="text"
                   name="endereco.estado"
@@ -246,7 +258,7 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.endereco?.estado}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>UF</Form.Label>
+                <Form.Label>UF:</Form.Label>
                 <Form.Control
                   type="text"
                   name="endereco.UF"
@@ -265,7 +277,7 @@ export default function CadastroPage() {
 
             <Row className="mb-3">
               <Form.Group as={Col}>
-                <Form.Label>Faculdade</Form.Label>
+                <Form.Label>Faculdade:</Form.Label>
                 <Form.Control
                   as="select"
                   name="faculdade"
@@ -301,7 +313,7 @@ export default function CadastroPage() {
                 <Form.Control.Feedback type="invalid">{errors.curso}</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>Período</Form.Label>
+                <Form.Label>Período:</Form.Label>
                 <Form.Control
                   as="select"
                   name="periodo"
@@ -321,8 +333,8 @@ export default function CadastroPage() {
             </Row>
 
             <Row className="mb-3">
-              <Form.Group as={Col} md={4}>
-                <Form.Label>Matrícula</Form.Label>
+              <Form.Group as={Col} md={3}>
+                <Form.Label>Matrícula:</Form.Label>
                 <Form.Control as={ReactInputMask}
                   mask={"999999"}
                   placeholder="000000"
@@ -335,6 +347,20 @@ export default function CadastroPage() {
                   isInvalid={touched.matricula && !!errors.matricula}
                 />
                 <Form.Control.Feedback type="invalid">{errors.matricula}</Form.Control.Feedback>
+              </Form.Group>
+
+              <Form.Group as={Col}>
+                <Form.Label>Link da Foto:</Form.Label>
+                <Form.Control
+                  type="link"
+                  name="foto"
+                  value={values.foto}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  isValid={touched.foto && !errors.foto}
+                  isInvalid={touched.foto && !!errors.foto}
+                />
+                <Form.Control.Feedback type="invalid">{errors.foto}</Form.Control.Feedback>
               </Form.Group>
             </Row>
 
