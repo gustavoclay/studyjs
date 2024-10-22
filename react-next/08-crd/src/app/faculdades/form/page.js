@@ -10,31 +10,35 @@ import { FaArrowLeft, FaCheck, FaTrash } from 'react-icons/fa'
 import { v4 } from 'uuid'
 import * as Yup from 'yup'
 
+// Componente principal da página de cadastro de faculdade
 export default function FaculdadePage(props) {
 
+  // hook useRouter para navegação
   const route = useRouter()
 
+  // Recupera a lista de faculdades do localStorage ou inicializa como um array vazio
   const faculdades = JSON.parse(localStorage.getItem('faculdades')) || []
 
   // usando o hook useSearchParams para pegar o id da faculdade
   // const id = useSearchParams().get('id')
 
-  // usando as props para pegar o id da faculdade
+  // Usando as props para pegar o id da faculdade a ser editada
   const id = props.searchParams.id
   const faculdadeEditada = faculdades.find(faculdade => faculdade.id === id)
 
-
+  // Estados para armazenar os dados de países, estados e cidades
   const [paises, setPaises] = useState([])
   const [estados, setEstados] = useState([])
   const [cidades, setCidades] = useState([])
 
+  // useEffect para carregar os dados ao montar o componente
   useEffect(() => {
     carregarDados()
     console.log('id >>> ', id)
     console.log('faculdadeEditada >>> ', faculdadeEditada)
   }, [])
 
-
+  // Função para carregar os dados de países e estados da API
   function carregarDados() {
 
     apiLocalidades.get('/paises').then(response => {
@@ -49,21 +53,26 @@ export default function FaculdadePage(props) {
 
   }
 
+  // Função para salvar os dados da faculdade
   function salvar(dados) {
-
+    // faculdade editada
     if (faculdadeEditada) {
+      // troca os dados da faculdade editada pelos novos dados
       Object.assign(faculdadeEditada, dados)
     } else {
+      // criar uma nova faculdade com um novo id e guarda na lista
       dados.id = v4()
       faculdades.push(dados)
     }
 
+    // salva a lista de faculdades no localStorage e navega para a lista de faculdades
     localStorage.setItem('faculdades', JSON.stringify(faculdades))
     alert('Faculdade salva com sucesso!')
     return route.push('/faculdades')
 
   }
 
+  // Valores iniciais do formulário
   const initialValues = {
     nome: '',
     pais: '',
@@ -72,6 +81,7 @@ export default function FaculdadePage(props) {
     endereco: ''
   }
 
+  // Esquema de validação usando Yup
   const validationSchema = Yup.object({
     nome: Yup.string().required('O nome é obrigatório'),
     pais: Yup.string().required('O país é obrigatório'),
@@ -107,6 +117,7 @@ export default function FaculdadePage(props) {
 
 
             // ações do formulário
+            // useEffect para buscar cidades quando o estado é alterado
             useEffect(() => {
               console.log('Mexeu no estado >>>', values.estado)
               if (values.estado !== '') {
@@ -117,7 +128,7 @@ export default function FaculdadePage(props) {
               }
             }, [values.estado])
 
-            // form
+            // formulário
             return (
               <Form>
 
