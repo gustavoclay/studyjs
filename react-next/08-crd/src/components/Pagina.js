@@ -26,7 +26,9 @@ export default function Pagina(props) {
             </NavDropdown>
             <Nav.Link href="/faculdades">Faculdades</Nav.Link>
             <Nav.Link href="/cursos">Cursos</Nav.Link>
+            <Nav.Link href="/professores">Professores</Nav.Link>
             <Nav.Link href="/alunos">Alunos</Nav.Link>
+            <Nav.Link href="/disciplinas">Disciplinas</Nav.Link>
             {/* <Nav.Link href="/tarefas">Lista de Tarefas</Nav.Link> */}
           </Nav>
         </Container>

@@ -3,87 +3,84 @@
 import Pagina from '@/components/Pagina'
 import { Formik } from 'formik'
 import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { FaArrowLeft, FaCheck, FaTrash } from 'react-icons/fa'
 import { v4 } from 'uuid'
 import * as Yup from 'yup'
 
-// Componente principal da página de cadastro de curso
-export default function CursoFormPage(props) {
+// Componente principal da página de cadastro de disciplina
+export default function DisciplinaFormPage(props) {
 
   // hook useRouter para navegação
   const route = useRouter()
 
-  // Recupera a lista de cursos do localStorage ou inicializa como um array vazio
+  // Recupera a lista de disciplinas do localStorage ou inicializa como um array vazio
+  const disciplinas = JSON.parse(localStorage.getItem('disciplinas')) || []
+
+  // Recupera a lista de cursos e professores do localStorage
   const cursos = JSON.parse(localStorage.getItem('cursos')) || []
+  const professores = JSON.parse(localStorage.getItem('professores')) || []
 
-  // Recupera a lista de faculdades do localStorage
-  const faculdades = JSON.parse(localStorage.getItem('faculdades')) || []
-
-  // Lista de áreas de estudo
-  const areasDeEstudo = [
-    'Ciências Exatas',
-    'Ciências Humanas',
-    'Ciências Biológicas',
-    'Engenharia',
-    'Tecnologia da Informação',
-    'Artes',
-    'Negócios',
-    'Direito'
-  ]
-
-  // Usando as props para pegar o id do curso a ser editado
+  // Usando as props para pegar o id da disciplina a ser editada
   const id = props.searchParams.id
-  const cursoEditado = cursos.find(curso => curso.id === id)
+  const disciplinaEditada = disciplinas.find(disciplina => disciplina.id === id)
 
-  // Função para salvar os dados do curso
+  // Estado para armazenar os professores filtrados pelo curso selecionado
+  const [professoresFiltrados, setProfessoresFiltrados] = useState([])
+
+  // Função para salvar os dados da disciplina
   function salvar(dados) {
-    // curso editado
-    if (cursoEditado) {
-      // troca os dados do curso editado pelos novos dados
-      Object.assign(cursoEditado, dados)
+    // disciplina editada
+    if (disciplinaEditada) {
+      // troca os dados da disciplina editada pelos novos dados
+      Object.assign(disciplinaEditada, dados)
     } else {
-      // criar um novo curso com um novo id e guarda na lista
+      // criar uma nova disciplina com um novo id e guarda na lista
       dados.id = v4()
-      cursos.push(dados)
+      disciplinas.push(dados)
     }
 
-    // salva a lista de cursos no localStorage e navega para a lista de cursos
-    localStorage.setItem('cursos', JSON.stringify(cursos))
-    alert('Curso salvo com sucesso!')
-    return route.push('/cursos')
-
+    // salva a lista de disciplinas no localStorage e navega para a lista de disciplinas
+    localStorage.setItem('disciplinas', JSON.stringify(disciplinas))
+    alert('Disciplina salva com sucesso!')
+    return route.push('/faculdades')
   }
 
   // Valores iniciais do formulário
   const initialValues = {
     nome: '',
     descricao: '',
-    area: '',
-    nota: '',
     status: '',
-    faculdade: ''
+    curso: '',
+    professor: ''
   }
 
   // Esquema de validação usando Yup
   const validationSchema = Yup.object({
     nome: Yup.string().required('O nome é obrigatório'),
     descricao: Yup.string().required('A descrição é obrigatória'),
-    area: Yup.string().required('A área é obrigatória'),
-    nota: Yup.number().required('A nota é obrigatória').min(1).max(5),
     status: Yup.string().required('O status é obrigatório'),
-    faculdade: Yup.string().required('A faculdade é obrigatória')
+    curso: Yup.string().required('O curso é obrigatório'),
+    professor: Yup.string().required('O professor é obrigatório')
   })
 
   return (
-    <Pagina titulo="Cadastro de Curso">
+    <Pagina titulo="Cadastro de Disciplina">
       <Formik
-        initialValues={cursoEditado || initialValues}
+        initialValues={disciplinaEditada || initialValues}
         validationSchema={validationSchema}
         onSubmit={salvar}
       >
         {
           ({ values, errors, touched, handleBlur, handleChange, handleReset, handleSubmit }) => {
+
+            useEffect(() => {
+              if (values.curso) {
+                const professoresDoCurso = professores.filter(professor => professor.curso === values.curso)
+                setProfessoresFiltrados(professoresDoCurso)
+              }
+            }, [values.curso])
 
             // formulário
             return (
@@ -121,44 +118,6 @@ export default function CursoFormPage(props) {
 
                 <Row className="mb-3">
                   <Form.Group as={Col}>
-                    <Form.Label>Área:</Form.Label>
-                    <Form.Select
-                      name="area"
-                      value={values.area}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      isValid={touched.area && !errors.area}
-                      isInvalid={touched.area && !!errors.area}
-                    >
-                      <option value="">Selecione...</option>
-                      {areasDeEstudo.map(area => <option key={area} value={area}>{area}</option>)}
-                    </Form.Select>
-                    <Form.Control.Feedback type="invalid">{errors.area}</Form.Control.Feedback>
-                  </Form.Group>
-
-                  <Form.Group as={Col}>
-                    <Form.Label>Nota Enade:</Form.Label>
-                    <Form.Select
-                      name="nota"
-                      value={values.nota}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      isValid={touched.nota && !errors.nota}
-                      isInvalid={touched.nota && !!errors.nota}
-                    >
-                      <option value="">Selecione...</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </Form.Select>
-                    <Form.Control.Feedback type="invalid">{errors.nota}</Form.Control.Feedback>
-                  </Form.Group>
-                </Row>
-
-                <Row className="mb-3">
-                  <Form.Group as={Col}>
                     <Form.Label>Status:</Form.Label>
                     <Form.Select
                       name="status"
@@ -176,25 +135,44 @@ export default function CursoFormPage(props) {
                   </Form.Group>
 
                   <Form.Group as={Col}>
-                    <Form.Label>Faculdade:</Form.Label>
+                    <Form.Label>Curso:</Form.Label>
                     <Form.Select
-                      name="faculdade"
-                      value={values.faculdade}
+                      name="curso"
+                      value={values.curso}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      isValid={touched.faculdade && !errors.faculdade}
-                      isInvalid={touched.faculdade && !!errors.faculdade}
+                      isValid={touched.curso && !errors.curso}
+                      isInvalid={touched.curso && !!errors.curso}
                     >
                       <option value="">Selecione...</option>
-                      {faculdades.map(faculdade => <option key={faculdade.id} value={faculdade.id}>{faculdade.nome}</option>)}
+                      {cursos.map(curso => <option key={curso.id} value={curso.id}>{curso.nome}</option>)}
                     </Form.Select>
-                    <Form.Control.Feedback type="invalid">{errors.faculdade}</Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">{errors.curso}</Form.Control.Feedback>
+                  </Form.Group>
+                </Row>
+
+                <Row className="mb-3">
+                  <Form.Group as={Col}>
+                    <Form.Label>Professor:</Form.Label>
+                    <Form.Select
+                      name="professor"
+                      value={values.professor}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      disabled={values.curso === ''}
+                      isValid={touched.professor && !errors.professor}
+                      isInvalid={touched.professor && !!errors.professor}
+                    >
+                      <option value="">Selecione...</option>
+                      {professoresFiltrados.map(professor => <option value={professor.id}>{professor.nome}</option>)}
+                    </Form.Select>
+                    <Form.Control.Feedback type="invalid">{errors.professor}</Form.Control.Feedback>
                   </Form.Group>
                 </Row>
 
                 <Row className="mb-3">
                   <Form.Group as={Col} className="mb-3">
-                    <Button variant="secondary" className="me-2" onClick={() => route.push('/cursos')}><FaArrowLeft /> Voltar</Button>
+                    <Button variant="secondary" className="me-2" onClick={() => route.push('/disciplinas')}><FaArrowLeft /> Voltar</Button>
                   </Form.Group>
 
                   <Form.Group as={Col} className='text-end'>
