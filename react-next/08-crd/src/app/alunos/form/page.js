@@ -9,8 +9,8 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaCheck, FaTrash } from "react-icons/fa6";
 import ReactInputMask from "react-input-mask";
-import * as Yup from 'yup';
 import { v4 } from 'uuid';
+import * as Yup from 'yup';
 
 export default function AlunosForm(props) {
 
@@ -32,19 +32,11 @@ export default function AlunosForm(props) {
     email: '',
     dataNascimento: '',
     telefone: '',
-    endereco: {
-      cep: '',
-      logradouro: '',
-      numero: '',
-      complemento: '',
-      cidade: '',
-      estado: '',
-      UF: ''
-    },
     faculdade: '',
     curso: '',
     periodo: '',
-    matricula: ''
+    matricula: '',
+    foto: ''
   }
 
   const validationSchema = Yup.object().shape({
@@ -55,19 +47,11 @@ export default function AlunosForm(props) {
       .required('A data de nascimento é obrigatória')
       .max(new Date(), 'A data de nascimento não pode ser no futuro'),
     telefone: Yup.string().required('Telefone é obrigatório'),
-    endereco: Yup.object().shape({
-      cep: Yup.string().required('CEP é obrigatório'),
-      logradouro: Yup.string().required('Logradouro é obrigatório'),
-      numero: Yup.string().required('Número é obrigatório'),
-      complemento: Yup.string().required('Complemento é obrigatório'),
-      cidade: Yup.string().required('Cidade é obrigatória'),
-      estado: Yup.string().required('Estado é obrigatório'),
-      UF: Yup.string().required('UF é obrigatório')
-    }),
     faculdade: Yup.string().required('Faculdade é obrigatória'),
     curso: Yup.string().required('Curso é obrigatório'),
     periodo: Yup.string().required('Período é obrigatório'),
-    matricula: Yup.string().required('Matrícula é obrigatória')
+    matricula: Yup.string().required('Matrícula é obrigatória'),
+    foto: Yup.string()
   })
 
 
@@ -191,111 +175,6 @@ export default function AlunosForm(props) {
                 </Form.Group>
               </Row>
 
-              <h3 className="text-center">Endereço</h3>
-              <hr />
-
-              <Row className="mb-3">
-                <Form.Group as={Col}>
-                  <Form.Label>CEP</Form.Label>
-                  <Form.Control as={ReactInputMask}
-                    mask={"99999-999"}
-                    placeholder="00000-000"
-                    type="text"
-                    name="endereco.cep"
-                    value={values.endereco.cep}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.endereco?.cep && !errors.endereco?.cep}
-                    isInvalid={touched.endereco?.cep && !!errors.endereco?.cep}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.endereco?.cep}</Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group as={Col}>
-                  <Form.Label>Logradouro</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="endereco.logradouro"
-                    value={values.endereco.logradouro}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.endereco?.logradouro && !errors.endereco?.logradouro}
-                    isInvalid={touched.endereco?.logradouro && !!errors.endereco?.logradouro}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.endereco?.logradouro}</Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group as={Col}>
-                  <Form.Label>Número</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="endereco.numero"
-                    value={values.endereco.numero}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.endereco?.numero && !errors.endereco?.numero}
-                    isInvalid={touched.endereco?.numero && !!errors.endereco?.numero}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.endereco?.numero}</Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group as={Col}>
-                  <Form.Label>Complemento</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="endereco.complemento"
-                    value={values.endereco.complemento}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.endereco?.complemento && !errors.endereco?.complemento}
-                    isInvalid={touched.endereco?.complemento && !!errors.endereco?.complemento}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.endereco?.complemento}</Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group as={Col}>
-                  <Form.Label>Cidade</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="endereco.cidade"
-                    value={values.endereco.cidade}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.endereco?.cidade && !errors.endereco?.cidade}
-                    isInvalid={touched.endereco?.cidade && !!errors.endereco?.cidade}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.endereco?.cidade}</Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group as={Col}>
-                  <Form.Label>Estado</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="endereco.estado"
-                    value={values.endereco.estado}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.endereco?.estado && !errors.endereco?.estado}
-                    isInvalid={touched.endereco?.estado && !!errors.endereco?.estado}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.endereco?.estado}</Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group as={Col}>
-                  <Form.Label>UF</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="endereco.UF"
-                    value={values.endereco.UF}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    isValid={touched.endereco?.UF && !errors.endereco?.UF}
-                    isInvalid={touched.endereco?.UF && !!errors.endereco?.UF}
-                  />
-                  <Form.Control.Feedback type="invalid">{errors.endereco?.UF}</Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-
               <h3 className="text-center">Acadêmico</h3>
               <hr />
 
@@ -368,6 +247,20 @@ export default function AlunosForm(props) {
                     isInvalid={touched.matricula && !!errors.matricula}
                   />
                   <Form.Control.Feedback type="invalid">{errors.matricula}</Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group as={Col} md={8}>
+                  <Form.Label>Foto</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="foto"
+                    value={values.foto}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    isValid={touched.foto && !errors.foto}
+                    isInvalid={touched.foto && !!errors.foto}
+                  />
+                  <Form.Control.Feedback type="invalid">{errors.foto}</Form.Control.Feedback>
                 </Form.Group>
               </Row>
 

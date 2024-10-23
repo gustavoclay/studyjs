@@ -53,6 +53,7 @@ export default function AlunosPage() {
       <Table striped bordered hover>
         <thead>
           <tr>
+            <th>Foto</th>
             <th>Matrícula</th>
             <th>Nome</th>
             <th>Sobrenome</th>
@@ -65,6 +66,9 @@ export default function AlunosPage() {
         <tbody>
           {alunos.map((aluno) => (
             <tr key={aluno.id}>
+              <td>
+                <img src={aluno.foto} alt={aluno.nome} style={{ width: '50px' }} />
+              </td>
               <td>{aluno.matricula}</td>
               <td>{aluno.nome}</td>
               <td>{aluno.sobrenome}</td>
