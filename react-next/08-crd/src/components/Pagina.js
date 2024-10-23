@@ -25,6 +25,7 @@ export default function Pagina(props) {
               <NavDropdown.Item href="/formulario/cadastro/lista">Lista de Alunos</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/faculdades">Faculdades</Nav.Link>
+            <Nav.Link href="/cursos">Cursos</Nav.Link>
             <Nav.Link href="/alunos">Alunos</Nav.Link>
             {/* <Nav.Link href="/tarefas">Lista de Tarefas</Nav.Link> */}
           </Nav>
