@@ -1,16 +1,16 @@
 {
-  "name": "projeto",
+  "name": "01-projeto",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "nodemon": "^3.1.0"
+    "express": "^5.1.0"
   }
 }
